@@ -35,13 +35,14 @@ async function main() {
 
             if (!response.ok) {
                 // NOT res.status >= 200 && res.status < 300 
-                return JSON.stringify({ statusCode: data.status, body: data.detail });
+                core.setOutput("msg",JSON.stringify({ statusCode: data.status, body: data.detail }));
             }
-            return ("Successfully push notification")
+            else{
+            core.setOutput("msg","Successfully push notification")
+            }
         }
-
         else {
-            return ("No New Post detected.");
+            core.setOutput("msg","No New Post detected.");
         }
 
     } catch (error) {
