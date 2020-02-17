@@ -1,5 +1,8 @@
 name: 'Push web notification'
 description: 'Push the web notification if there are new posts.'
+branding:
+  icon: "bell"
+  color: "yellow"
 outputs:
   status_message: # id of output
     description: 'The execution result'
