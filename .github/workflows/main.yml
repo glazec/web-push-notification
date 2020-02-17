@@ -13,6 +13,6 @@ jobs:
       env:
         webpushrKey: ${{ secrets.webpushrKey }}
         webpushrAuthToken: ${{ secrets.webpushrAuthToken }}
-        newPostRep: ${{ secrets.newPostRep }}
+        newPostRepo: ${{ secrets.newPostRepo }}
         newPostOnlineSite: ${{ secrets.newPostOnlineSite }}
         buildHook: ${{ secrets.buildHook }}
