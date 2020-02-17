@@ -3,12 +3,12 @@ on: [push]
 jobs:
   push_notification_if_new_post:
     runs-on: ubuntu-latest
-    name: A job to say hello
+    name: A job to auto push notification
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-    - name: Hello world action step
-      id: hello
+    - name: push web notification if there is new post
+      id: msg
       uses: ./
       env:
         webpushrKey: ${{ secrets.webpushrKey }}
