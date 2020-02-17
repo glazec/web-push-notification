@@ -1,10 +1,5 @@
 name: 'Push web notification'
 description: 'Push the web notification if there are new posts.'
-inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
-    required: true
-    default: 'World'
 outputs:
   status_message: # id of output
     description: 'The execution result'
