@@ -32,7 +32,6 @@ async function main() {
                 body: JSON.stringify(payload),
             });
             const data = await response.json();
-
             if (!response.ok) {
                 // NOT res.status >= 200 && res.status < 300 
                 console.log(JSON.stringify(data))
