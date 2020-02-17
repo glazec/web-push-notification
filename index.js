@@ -5,12 +5,10 @@ const github = require("@actions/github");
 async function main() {
   try {
     // Get newPost.json from your site.
-    console.log(process.env.newPostOnlineSite)
     var newPostOnlineSite = await fetch(process.env.newPostOnlineSite);
     newPostOnlineSite = await newPostOnlineSite.json();
     newPostOnlineSite = JSON.parse(JSON.stringify(newPostOnlineSite));
     // Get newPost.json from your repo.
-    console.log(process.env.newPostRepo)
     var newPostRepo = await fetch(process.env.newPostRepo);
     // Get newPost.json from the repo
     newPostRepo = await newPostRepo.json();
