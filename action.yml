@@ -6,7 +6,7 @@ inputs:
     required: true
     default: 'World'
 outputs:
-  msg: # id of output
+  status_message: # id of output
     description: 'The execution result'
 runs:
   using: 'node12'
