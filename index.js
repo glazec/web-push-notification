@@ -42,6 +42,7 @@ async function main() {
             }
         }
         else {
+            console.log("No New Post detected.")
             core.setOutput("msg","No New Post detected.");
         }
 
