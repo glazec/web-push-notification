@@ -14,13 +14,13 @@ async function maim() {
         newPostRepo = JSON.parse(JSON.stringify(newPostRepo))
         console.log(newPostOnlineSite)
         console.log(newPostRepo)
-    
+
         //publish the site
         fetch(process.env.buildHook, { method: 'POST' });
-    
-        if (newPostOnlineSite.id != newPostRepo.id) {   
+
+        if (newPostOnlineSite.id != newPostRepo.id) {
             // push new Post notificaiton
-    
+
             payload = { "title": newPostRepo.title, "message": newPostRepo.summary, "target_url": newPostRepo.url }
             const response = await fetch('https://app.webpushr.com/api/v1/notification/send/all', {
                 method: 'POST',
@@ -32,22 +32,19 @@ async function maim() {
                 body: JSON.stringify(payload),
             });
             const data = await response.json();
-    
+
             if (!response.ok) {
                 // NOT res.status >= 200 && res.status < 300 
                 return JSON.stringify({ statusCode: data.status, body: data.detail });
             }
-            return (
-                "Successfully push notification"),
-            
-    
-    
+            return ("Successfully push notification")
         }
+
         else {
             return (
                 "No New Post detected.");
         }
-    
+
     } catch (error) {
         core.setFailed(error.message);
     }
