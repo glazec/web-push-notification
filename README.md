@@ -20,7 +20,31 @@ When new post is pushed to github repo. This github action is triggered. It will
 
 ## How to use
 
-Please set these **five** environment variables. You can set it in setting->secrets.
+Here is an example of [.github/workflows/main.yml](https://github.com/glazec/glazec.github.io/blob/master/.github/workflows/main.yml).
+```yaml
+name: web push notification
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Push web notification
+      id: notification
+      uses: glazec/web-push-notification@v1.1
+      env:
+        webpushrKey: ${{ secrets.webpushrKey }}
+        webpushrAuthToken: ${{ secrets.webpushrAuthToken }}
+        newPostRepo: ${{ secrets.newPostRepo }}
+        newPostOnlineSite: ${{ secrets.newPostOnlineSite }}
+        buildHook: ${{ secrets.buildHook }}
+```
+
+Please remember to set these **five** environment variables. You can set it in setting->secrets.
 ```
         webpushrKey: **** # This is your webpushr api key.
         webpushrAuthToken: *** # This is your webpushr auth token
