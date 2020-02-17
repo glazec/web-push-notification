@@ -2,7 +2,7 @@ const fetch = require('node-fetch');
 const core = require('@actions/core');
 const github = require('@actions/github');
 
-async function maim() {
+async function main() {
     try {
         // Get newPost.json from your site.
         var newPostOnlineSite = await fetch('https://www.inevitable.tech/newPost.json')
@@ -41,8 +41,7 @@ async function maim() {
         }
 
         else {
-            return (
-                "No New Post detected.");
+            return ("No New Post detected.");
         }
 
     } catch (error) {
