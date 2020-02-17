@@ -35,7 +35,7 @@ async function main() {
 
             if (!response.ok) {
                 // NOT res.status >= 200 && res.status < 300 
-                console.log(JSON.stringify({ statusCode: data.status, body: data.detail }))
+                console.log(JSON.stringify(data))
                 core.setOutput("msg", JSON.stringify({ statusCode: data.status, body: data.detail }));
             }
             else {
