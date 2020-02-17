@@ -46,17 +46,17 @@ async function main() {
       const data = await response.json();
       if (!response.ok) {
         // NOT res.status >= 200 && res.status < 300
-        console.log(JSON.stringify(data));
+        console.info(JSON.stringify(data));
         // core.setOutput(
         //   "msg",
         //   JSON.stringify({ statusCode: data.status, body: data.detail })
         // );
       } else {
-        console.log("Successfully push notification");
+        console.info("Successfully push notification");
         // core.setOutput("msg", "Successfully push notification");
       }
     } else {
-      console.log("No New Post detected.");
+      console.info("No New Post detected.");
       core.setOutput("msg", "No New Post detected.");
     }
   } catch (error) {
