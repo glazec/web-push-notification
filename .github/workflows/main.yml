@@ -8,8 +8,6 @@ jobs:
     - name: Hello world action step
       id: hello
       uses: glazec/netlify-web-push-notification
-      with:
-        who-to-greet: 'Mona the Octocat'
       env:
         webpushrKey: ${{ secrets.webpushrKey }}
         webpushrAuthToken: ${{ secrets.webpushrAuthToken }}
