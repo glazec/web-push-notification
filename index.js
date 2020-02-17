@@ -23,7 +23,7 @@ async function main() {
     fetch(process.env.buildHook, { method: "POST" });
 
     if (newPostOnlineSite.id != newPostRepo.id) {
-      // push new Post notificaiton
+      // push new Post notification
 
       payload = {
         title: newPostRepo.title,
