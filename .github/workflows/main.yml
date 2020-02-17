@@ -7,7 +7,7 @@ jobs:
     steps:
     - name: Hello world action step
       id: hello
-      uses: glazec/netlify-web-push-notification
+      uses: ./
       env:
         webpushrKey: ${{ secrets.webpushrKey }}
         webpushrAuthToken: ${{ secrets.webpushrAuthToken }}
