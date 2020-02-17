@@ -16,8 +16,9 @@ async function main() {
     );
     newPostRepo = await newPostRepo.json();
     newPostRepo = JSON.parse(JSON.stringify(newPostRepo));
-    console.log(newPostOnlineSite);
-    console.log(newPostRepo);
+    console.table({"From online site":newPostOnlineSite,"From Repo":newPostRepo})
+    // console.info(newPostOnlineSite);
+    // console.info(newPostRepo);
 
     //publish the site
     fetch(process.env.buildHook, { method: "POST" });
