@@ -35,7 +35,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Push web notification
       id: notification
-      uses: glazec/web-push-notification@v1.1
+      uses: glazec/web-push-notification@v1.3
       env:
         webpushrKey: ${{ secrets.webpushrKey }}
         webpushrAuthToken: ${{ secrets.webpushrAuthToken }}
