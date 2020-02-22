@@ -23,14 +23,15 @@ async function main() {
     console.info("Trigger Netlify deploy");
 
     //determine whether to push web notification
-    if (newPostOnlineSite.id != newPostRepo.id) {
+    if (newPostOnlineSite.id ==newPostRepo.id) {
       // push new Post notification
 
       payload = {
         title: newPostRepo.title,
         message: newPostRepo.summary,
-        target_url: newPostRepo.url
+        target_url: "posts/"+newPostRepo.id
       };
+      console.log(payload)
       const response = await fetch(
         "https://app.webpushr.com/api/v1/notification/send/all",
         {
