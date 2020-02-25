@@ -1,4 +1,8 @@
 # web-push-notification
+
+**Please use [hexo-web-push-notification](https://github.com/glazec/hexo-web-push-notification) instead.**
+
+
 ![.github/workflows/main.yml](https://github.com/glazec/web-push-notification/workflows/.github/workflows/main.yml/badge.svg)
 ## Intro
 This action is designed for blog to automately **push notification**.
